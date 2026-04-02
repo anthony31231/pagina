@@ -1,0 +1,18 @@
+
+        :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#111;background:#f7f7f8}
+        body{margin:0;display:flex;flex-direction:column;min-height:100vh}
+        header, footer{background:#0b3b65;color:#fff;padding:1rem}
+        header{display:flex;align-items:center;justify-content:space-between}
+        nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.75rem}
+        nav a{color:#cfe8ff;text-decoration:none;padding:.25rem .5rem;border-radius:.25rem}
+        nav a:hover{background:rgba(255,255,255,.06)}
+        main{flex:1;padding:1rem;max-width:900px;margin:0 auto;width:100%}
+        .player{background:#fff;padding:1rem;border-radius:.5rem;box-shadow:0 1px 4px rgba(0,0,0,.06);display:grid;gap:.75rem}
+        .track-info{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+        .playlist{margin-top:.75rem}
+        .playlist ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.35rem}
+        .playlist button{width:100%;text-align:left;padding:.5rem;border:1px solid #e6e9ef;border-radius:.35rem;background:#fafafa;cursor:pointer}
+        .playlist button[aria-current="true"]{background:#e9f4ff;border-color:#9fd1ff}
+        footer{font-size:.9rem;text-align:center}
+        @media(min-width:600px){ .player{grid-template-columns:1fr 280px;align-items:start} .playlist{margin-top:0} }
+

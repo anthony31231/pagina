@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>los espartanos</title>
+    <link type="image/x-icon" rel="shortcut icon" href="esparta.ico">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/estilo1.css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1 style="margin:.1rem 0;font-size:1.25rem">Escuchar Música</h1>
+            <p style="margin:0;font-size:.9rem;opacity:.9">Reproductor simple y lista de canciones</p>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="#" aria-current="page">Inicio</a></li>
+                <li><a href="#player">Reproductor</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="player" class="player" aria-labelledby="playerTitle">
+            <div>
+                <h2 id="playerTitle" style="margin:.25rem 0">Reproductor</h2>
+                <!-- Elemento audio nativo con controles -->
+                <audio id="audio" controls preload="none" style="width:100%">
+                    <source src="tracks/track1.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+
+                <div class="track-info" aria-live="polite" style="margin-top:.5rem">
+                    <div>
+                        <strong id="currentTitle">Canción de ejemplo 1</strong>
+                        <div id="currentArtist" style="font-size:.9rem;opacity:.8">Artista</div>
+                    </div>
+                    <div style="font-size:.85rem;opacity:.8" id="currentDuration">—:—</div>
+                </div>
+            </div>
+
+            <aside class="playlist" aria-labelledby="playlistTitle">
+                <h3 id="playlistTitle" style="margin:.25rem 0">Lista de reproducción</h3>
+                <ul>
+                    <li><button data-src="tracks/track1.mp3" data-title="Canción de ejemplo 1" data-artist="Artista A">Canción de ejemplo 1 — Artista A</button></li>
+                    <li><button data-src="tracks/track2.mp3" data-title="Canción de ejemplo 2" data-artist="Artista B">Canción de ejemplo 2 — Artista B</button></li>
+                    <li><button data-src="tracks/track3.mp3" data-title="Canción de ejemplo 3" data-artist="Artista C">Canción de ejemplo 3 — Artista C</button></li>
+                </ul>
+            </aside>
+        </section>
+
+        <section id="descripcion" style="margin-top:1rem">
+            <h3>Sobre la página</h3>
+            <p style="margin:.25rem 0">Interfaz semántica simple para reproducir pistas. Reemplaza los archivos en /tracks/ con tus MP3.</p>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <small>&copy; 2026 Escuchar Música — Proyecto de ejemplo</small>
+    </footer>
+
+    <script>
+        // Lógica mínima para seleccionar pista desde la lista
+        const audio = document.getElementById('audio');
+        const titleEl = document.getElementById('currentTitle');
+        const artistEl = document.getElementById('currentArtist');
+        const durationEl = document.getElementById('currentDuration');
+        const buttons = document.querySelectorAll('.playlist button');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // marcar seleccionado accesible
+                buttons.forEach(b => b.removeAttribute('aria-current'));
+                btn.setAttribute('aria-current', 'true');
+
+                // actualizar fuente y metadatos
+                const src = btn.dataset.src;
+                const title = btn.dataset.title || 'Desconocido';
+                const artist = btn.dataset.artist || '';
+
+                if (audio.src !== location.origin + '/' + src.replace(/^\//, '')) {
+                    audio.src = src;
+                }
+                titleEl.textContent = title;
+                artistEl.textContent = artist;
+                audio.play().catch(()=>{/* reproducción bloqueada por política del navegador */});
+            });
+        });
+
+        // mostrar duración cuando esté disponible
+        audio.addEventListener('loadedmetadata', () => {
+            const s = Math.floor(audio.duration % 60).toString().padStart(2,'0');
+            const m = Math.floor(audio.duration / 60);
+            durationEl.textContent = m + ':' + s;
+        });
+    </script>
+</body>
+</html>
