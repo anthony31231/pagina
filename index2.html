@@ -11,8 +11,8 @@
 <body>
     <header>
         <div>
-            <h1 style="margin:.1rem 0;font-size:1.25rem">Escuchar Música</h1>
-            <p style="margin:0;font-size:.9rem;opacity:.9">Reproductor simple y lista de canciones</p>
+            <h1 style="margin:.1rem 0;font-size:1.25rem"><!-- CAMBIAR TÍTULO PRINCIPAL AQUÍ -->Escuchar Música</h1>
+            <p style="margin:0;font-size:.9rem;opacity:.9"><!-- CAMBIAR DESCRIPCIÓN AQUÍ -->Reproductor simple y lista de canciones</p>
         </div>
         <nav aria-label="Navegación principal">
             <ul>
@@ -26,7 +26,7 @@
     <main>
         <section id="player" class="player" aria-labelledby="playerTitle">
             <div>
-                <h2 id="playerTitle" style="margin:.25rem 0">Reproductor</h2>
+                <h2 id="playerTitle" style="margin:.25rem 0"><!-- CAMBIAR TÍTULO DEL REPRODUCTOR AQUÍ -->Reproductor</h2>
                 <!-- Elemento audio nativo con controles -->
                 <audio id="audio" controls preload="none" style="width:100%">
                     <source src="tracks/1.Mambinho Brasileño.mp3" type="audio/mpeg">
@@ -35,17 +35,17 @@
 
                 <div class="track-info" aria-live="polite" style="margin-top:.5rem">
                     <div>
-                        <strong id="currentTitle">Mambinho Brasileño</strong>
-                        <div id="currentArtist" style="font-size:.9rem;opacity:.8">Artista</div>
+                        <strong id="currentTitle"><!-- CAMBIAR TÍTULO DE CANCIÓN ACTUAL AQUÍ -->Mambinho Brasileño</strong>
+                        <div id="currentArtist" style="font-size:.9rem;opacity:.8"><!-- CAMBIAR ARTISTA AQUÍ -->Artista</div>
                     </div>
                     <div style="font-size:.85rem;opacity:.8" id="currentDuration">—:—</div>
                 </div>
             </div>
 
             <aside class="playlist" aria-labelledby="playlistTitle">
-                <h3 id="playlistTitle" style="margin:.25rem 0">Lista de reproducción</h3>
+                <h3 id="playlistTitle" style="margin:.25rem 0"><!-- CAMBIAR TÍTULO DE LA LISTA AQUÍ -->Lista de reproducción</h3>
                 <ul>
-                    <li><button data-src="tracks/1.Mambinho Brasileño.mp3" data-title="Mambinho Brasileño" data-artist="Desconocido">Mambinho Brasileño</button></li>
+                    <li><button data-src="tracks/1.Mambinho Brasileño.mp3" data-title="Mambinho Brasileño" data-artist="Desconocido"><!-- CAMBIAR NOMBRE DE CANCIÓN AQUÍ -->Mambinho Brasileño</button></li>
                     <li><button data-src="tracks/10.SOLEAO.mp3" data-title="SOLEAO" data-artist="Desconocido">SOLEAO</button></li>
                     <li><button data-src="tracks/2.QLOO.mp3" data-title="QLOO" data-artist="Desconocido">QLOO</button></li>
                     <li><button data-src="tracks/3.no tiene sentido.mp3" data-title="no tiene sentido" data-artist="Desconocido">no tiene sentido</button></li>
