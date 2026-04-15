@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -9,99 +8,316 @@
     <link rel="stylesheet" type="text/css" href="css/estilo1.css">
 </head>
 <body>
-    <header>
-        <div>
-            <h1 style="margin:.1rem 0;font-size:1.25rem"><!-- CAMBIAR TÍTULO PRINCIPAL AQUÍ -->Escuchar Música</h1>
-            <p style="margin:0;font-size:.9rem;opacity:.9"><!-- CAMBIAR DESCRIPCIÓN AQUÍ -->Reproductor simple y lista de canciones</p>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Escuchar Música</h1>
         </div>
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="#" aria-current="page">Inicio</a></li>
-                <li><a href="#player">Reproductor</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#buscar">Buscar</a></li>
+                <li><a href="#biblioteca">Tu Biblioteca</a></li>
             </ul>
         </nav>
-    </header>
+    </aside>
 
-    <main>
-        <section id="player" class="player" aria-labelledby="playerTitle">
-            <div>
-                <h2 id="playerTitle" style="margin:.25rem 0"><!-- CAMBIAR TÍTULO DEL REPRODUCTOR AQUÍ -->Reproductor</h2>
-                <!-- Elemento audio nativo con controles -->
-                <audio id="audio" controls preload="none" style="width:100%">
+    <div class="main-content">
+        <main>
+            <section class="hero-card">
+                <div class="hero-image">
+                    <img src="canciones en tendecia/top1.png" alt="Portada de SUPERESTRELLA">
+                </div>
+                <div class="hero-details">
+                    <span class="hero-label">Canción</span>
+                    <h1 id="currentTitle">SUPERESTRELLA</h1>
+                    <span class="hero-artist" id="currentArtist">Aitana</span>
+                    <p class="hero-description">Martes de rolitas pop virales ¡Dale play y sé feliz!</p>
+                    <div class="track-status">
+                        <span id="currentTime">0:00</span>
+                        <span id="durationTime">0:00</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="button-primary">Reproducir</button>
+                        <button class="button-secondary">Guardar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="explore-row">
+                <button class="tab active">Todo</button>
+                <button class="tab">Música</button>
+                <button class="tab">Podcasts</button>
+            </section>
+
+            <div class="content-grid">
+                <section class="suggestions-grid">
+                    <div class="suggestions-header">
+                        <h2>Sugerencias para hoy</h2>
+                        <button class="button-secondary small">Mostrar todo</button>
+                    </div>
+                    <ul>
+                        <li>
+                            <button class="track-card" aria-current="true" data-src="tracks/1.Mambinho Brasileño.mp3" data-image="canciones en tendecia/top1.png" data-title="Mambinho Brasileño" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top1.png" alt="Portada de Mambinho Brasileño">
+                                <div class="track-card-text">
+                                    <span class="track-number">1.</span>
+                                    <span class="track-name">Mambinho Brasileño</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/2.QLOO.mp3" data-image="canciones en tendecia/top2.png" data-title="QLOO" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top2.png" alt="Portada de QLOO">
+                                <div class="track-card-text">
+                                    <span class="track-number">2.</span>
+                                    <span class="track-name">QLOO</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/3.no tiene sentido.mp3" data-image="canciones en tendecia/top3.png" data-title="no tiene sentido" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top3.png" alt="Portada de no tiene sentido">
+                                <div class="track-card-text">
+                                    <span class="track-number">3.</span>
+                                    <span class="track-name">no tiene sentido</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/4.MISSING.mp3" data-image="canciones en tendecia/top4.png" data-title="MISSING" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top4.png" alt="Portada de MISSING">
+                                <div class="track-card-text">
+                                    <span class="track-number">4.</span>
+                                    <span class="track-name">MISSING</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/5.y ke pa (Remix).mp3" data-image="canciones en tendecia/top5.png" data-title="y ke pa (Remix)" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top5.png" alt="Portada de y ke pa (Remix)">
+                                <div class="track-card-text">
+                                    <span class="track-number">5.</span>
+                                    <span class="track-name">y ke pa (Remix)</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/6.Amor escondido.mp3" data-image="canciones en tendecia/top6.png" data-title="Amor escondido" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top6.png" alt="Portada de Amor escondido">
+                                <div class="track-card-text">
+                                    <span class="track-number">6.</span>
+                                    <span class="track-name">Amor escondido</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/7Mala Mia Remix.mp3" data-image="canciones en tendecia/top7.png" data-title="Mala Mia Remix" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top7.png" alt="Portada de Mala Mia Remix">
+                                <div class="track-card-text">
+                                    <span class="track-number">7.</span>
+                                    <span class="track-name">Mala Mia Remix</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/8.LATINA FOREVA.mp3" data-image="canciones en tendecia/top8.png" data-title="LATINA FOREVA" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top8.png" alt="Portada de LATINA FOREVA">
+                                <div class="track-card-text">
+                                    <span class="track-number">8.</span>
+                                    <span class="track-name">LATINA FOREVA</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/9.TU YO.mp3" data-image="canciones en tendecia/top9.png" data-title="TU YO" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top9.png" alt="Portada de TU YO">
+                                <div class="track-card-text">
+                                    <span class="track-number">9.</span>
+                                    <span class="track-name">TU YO</span>
+                                </div>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="track-card" data-src="tracks/10.SOLEAO.mp3" data-image="canciones en tendecia/top10.png" data-title="SOLEAO" data-artist="Desconocido">
+                                <img src="canciones en tendecia/top10.png" alt="Portada de SOLEAO">
+                                <div class="track-card-text">
+                                    <span class="track-number">10.</span>
+                                    <span class="track-name">SOLEAO</span>
+                                </div>
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+
+                <aside class="right-panel">
+                    <div class="now-playing-card">
+                        <img src="canciones en tendecia/top4.png" alt="Maliante Hp (Remix)">
+                        <div class="now-playing-info">
+                            <span class="now-playing-label">Tus me gusta</span>
+                            <h2>Maliante Hp (Remix) [feat. Anuel]</h2>
+                            <p class="now-playing-artists">Benny Benni, Anuel AA, Farruko, Almighty, Darkiel</p>
+                        </div>
+                    </div>
+                    <div class="credits-card">
+                        <div class="credits-header">
+                            <span>Créditos</span>
+                            <button class="credits-link">Mostrar todo</button>
+                        </div>
+                        <div class="credits-body">
+                            <strong>Benny Benni</strong>
+                            <span>Artista Principal</span>
+                        </div>
+                        <button class="button-secondary">Seguir</button>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="player-footer">
+                <audio id="audio" preload="none" style="display:none">
                     <source src="tracks/1.Mambinho Brasileño.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
 
-                <div class="track-info" aria-live="polite" style="margin-top:.5rem">
-                    <div>
-                        <strong id="currentTitle"><!-- CAMBIAR TÍTULO DE CANCIÓN ACTUAL AQUÍ -->Mambinho Brasileño</strong>
-                        <div id="currentArtist" style="font-size:.9rem;opacity:.8"><!-- CAMBIAR ARTISTA AQUÍ -->Artista</div>
-                    </div>
-                    <div style="font-size:.85rem;opacity:.8" id="currentDuration">—:—</div>
+                <div class="player-actions">
+                    <button id="prevTrack" aria-label="Canción anterior">⏮</button>
+                    <button id="playPause" aria-label="Reproducir o pausar">
+                        <span id="playPauseIcon">▶</span>
+                    </button>
+                    <button id="nextTrack" aria-label="Siguiente canción">⏭</button>
+                </div>
+
+                <div class="volume-control">
+                    <label for="volumeRange">Volumen</label>
+                    <input type="range" id="volumeRange" min="0" max="1" step="0.01" value="0.8">
+                </div>
+
+                <div class="progress-bar" id="progress" aria-label="Barra de progreso de la canción">
+                    <div class="progress-filled" id="progressFilled"></div>
                 </div>
             </div>
 
-            <aside class="playlist" aria-labelledby="playlistTitle">
-                <h3 id="playlistTitle" style="margin:.25rem 0"><!-- CAMBIAR TÍTULO DE LA LISTA AQUÍ -->Lista de reproducción</h3>
-                <ul>
-                    <li><button data-src="tracks/1.Mambinho Brasileño.mp3" data-title="Mambinho Brasileño" data-artist="Desconocido"><!-- CAMBIAR NOMBRE DE CANCIÓN AQUÍ -->Mambinho Brasileño</button></li>
-                    <li><button data-src="tracks/10.SOLEAO.mp3" data-title="SOLEAO" data-artist="Desconocido">SOLEAO</button></li>
-                    <li><button data-src="tracks/2.QLOO.mp3" data-title="QLOO" data-artist="Desconocido">QLOO</button></li>
-                    <li><button data-src="tracks/3.no tiene sentido.mp3" data-title="no tiene sentido" data-artist="Desconocido">no tiene sentido</button></li>
-                    <li><button data-src="tracks/4.MISSING.mp3" data-title="MISSING" data-artist="Desconocido">MISSING</button></li>
-                    <li><button data-src="tracks/5.y ke pa (Remix).mp3" data-title="y ke pa (Remix)" data-artist="Desconocido">y ke pa (Remix)</button></li>
-                    <li><button data-src="tracks/6.Amor escondido.mp3" data-title="Amor escondido" data-artist="Desconocido">Amor escondido</button></li>
-                    <li><button data-src="tracks/7Mala Mia Remix.mp3" data-title="Mala Mia Remix" data-artist="Desconocido">Mala Mia Remix</button></li>
-                    <li><button data-src="tracks/8.LATINA FOREVA.mp3" data-title="LATINA FOREVA" data-artist="Desconocido">LATINA FOREVA</button></li>
-                    <li><button data-src="tracks/9.TU YO.mp3" data-title="TU YO" data-artist="Desconocido">TU YO</button></li>
-                </ul>
-            </aside>
-        </section>
+        </main>
 
-        <section id="descripcion" style="margin-top:1rem">
-            <h3>Sobre la página</h3>
-            <p style="margin:.25rem 0">Interfaz semántica simple para reproducir pistas. Reemplaza los archivos en /tracks/ con tus MP3.</p>
-        </section>
-    </main>
-
-    <footer id="contacto">
-        <small>&copy; 2026 Escuchar Música — Proyecto de ejemplo</small>
-    </footer>
+        <footer id="contacto">
+            <small>&copy; 2026 Escuchar Música — Proyecto de ejemplo</small>
+        </footer>
+    </div>
 
     <script>
         // Lógica mínima para seleccionar pista desde la lista
         const audio = document.getElementById('audio');
         const titleEl = document.getElementById('currentTitle');
         const artistEl = document.getElementById('currentArtist');
-        const durationEl = document.getElementById('currentDuration');
-        const buttons = document.querySelectorAll('.playlist button');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationTimeEl = document.getElementById('durationTime');
+        const albumImage = document.getElementById('albumImage');
+        const progress = document.getElementById('progress');
+        const progressFilled = document.getElementById('progressFilled');
+        const albumArt = document.querySelector('.hero-image');
+        const playPauseBtn = document.getElementById('playPause');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const prevTrackBtn = document.getElementById('prevTrack');
+        const nextTrackBtn = document.getElementById('nextTrack');
+        const volumeRange = document.getElementById('volumeRange');
+        const buttons = Array.from(document.querySelectorAll('.track-card'));
+        let currentTrackIndex = buttons.findIndex(btn => btn.hasAttribute('aria-current'));
+        if (currentTrackIndex < 0) currentTrackIndex = 0;
 
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // marcar seleccionado accesible
-                buttons.forEach(b => b.removeAttribute('aria-current'));
-                btn.setAttribute('aria-current', 'true');
+        const updatePlayIcon = () => {
+            playPauseIcon.textContent = audio.paused ? '▶' : '❚❚';
+        };
 
-                // actualizar fuente y metadatos
-                const src = btn.dataset.src;
-                const title = btn.dataset.title || 'Desconocido';
-                const artist = btn.dataset.artist || '';
+        const loadTrack = (btn, index) => {
+            buttons.forEach(b => b.removeAttribute('aria-current'));
+            btn.setAttribute('aria-current', 'true');
+            currentTrackIndex = index;
 
-                if (audio.src !== location.origin + '/' + src.replace(/^\//, '')) {
-                    audio.src = src;
-                }
-                titleEl.textContent = title;
-                artistEl.textContent = artist;
-                audio.play().catch(()=>{/* reproducción bloqueada por política del navegador */});
-            });
+            const src = btn.dataset.src;
+            const title = btn.dataset.title || 'Desconocido';
+            const artist = btn.dataset.artist || '';
+            const image = btn.dataset.image || '';
+
+            if (audio.src !== location.origin + '/' + src.replace(/^\//, '')) {
+                audio.src = src;
+                audio.load();
+            }
+            titleEl.textContent = title;
+            artistEl.textContent = artist;
+            if (image) {
+                albumImage.src = image;
+                albumImage.alt = 'Portada de ' + title;
+            } else {
+                albumImage.src = 'https://via.placeholder.com/300x300/1DB954/ffffff?text=' + encodeURIComponent(title);
+                albumImage.alt = 'Portada de álbum';
+            }
+            if (albumArt) {
+                albumArt.classList.add('expanded');
+                setTimeout(() => albumArt.classList.remove('expanded'), 500);
+            }
+            audio.play().catch(()=>{/* reproducción bloqueada por política del navegador */});
+            updatePlayIcon();
+        };
+
+        buttons.forEach((btn, index) => {
+            btn.addEventListener('click', () => loadTrack(btn, index));
         });
 
-        // mostrar duración cuando esté disponible
+        const togglePlay = () => {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            updatePlayIcon();
+        };
+
+        playPauseBtn.addEventListener('click', togglePlay);
+
+        prevTrackBtn.addEventListener('click', () => {
+            const prevIndex = (currentTrackIndex - 1 + buttons.length) % buttons.length;
+            loadTrack(buttons[prevIndex], prevIndex);
+        });
+
+        nextTrackBtn.addEventListener('click', () => {
+            const nextIndex = (currentTrackIndex + 1) % buttons.length;
+            loadTrack(buttons[nextIndex], nextIndex);
+        });
+
+        albumImage.addEventListener('click', togglePlay);
+
+        volumeRange.addEventListener('input', () => {
+            audio.volume = parseFloat(volumeRange.value);
+        });
+
+        audio.volume = parseFloat(volumeRange.value);
+
+
+        const formatTime = seconds => {
+            const m = Math.floor(seconds / 60);
+            const s = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        };
+
+        const updateProgress = () => {
+            if (!audio.duration) return;
+            const percent = (audio.currentTime / audio.duration) * 100;
+            progressFilled.style.width = `${percent}%`;
+            currentTimeEl.textContent = formatTime(audio.currentTime);
+            durationTimeEl.textContent = formatTime(audio.duration);
+        };
+
         audio.addEventListener('loadedmetadata', () => {
-            const s = Math.floor(audio.duration % 60).toString().padStart(2,'0');
-            const m = Math.floor(audio.duration / 60);
-            durationEl.textContent = m + ':' + s;
+            durationTimeEl.textContent = formatTime(audio.duration);
+            updateProgress();
+        });
+
+        audio.addEventListener('timeupdate', updateProgress);
+
+        progress.addEventListener('click', event => {
+            if (!audio.duration) return;
+            const rect = progress.getBoundingClientRect();
+            const percent = (event.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
         });
     </script>
 </body>
